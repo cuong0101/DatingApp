@@ -10,6 +10,7 @@ import { AccountService } from 'src/app/_services/account.service';
 export class TestErrorsComponent implements OnInit {
   baseUrl = 'https://localhost:5001/api/';
   validationErrors: string[] = [];
+  
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {

@@ -19,11 +19,11 @@ namespace API.Controllers
         public ActionResult<string> GetSecret(){
             return "secret text";
         }
-        [HttpGet("no-found")]
+        [HttpGet("not-found")]
         public ActionResult<AppUser> GetNotFound(){
             var thing = _context.Users.Find(-1);
 
-            if (thing == null) return GetNotFound();
+            if (thing == null) return NotFound();
 
             return Ok(thing);
         }
@@ -40,7 +40,7 @@ namespace API.Controllers
         [HttpGet("bad-request")]
         public ActionResult<string> GetBadRequest(){
             
-            return BadRequest("This was not a good request");
+            return BadRequest();
         }
     }
 }
